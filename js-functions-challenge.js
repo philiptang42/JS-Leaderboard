@@ -29,9 +29,6 @@ var gameInfo = function(){
 
 // YOUR CODE HERE
 
-// teamObject = function(team){
-//   return {team: team}
-// };
 
 var teamNames = function(){
   var teams = [];
@@ -50,9 +47,41 @@ var teamNames = function(){
   return teams;
 };
 
-var teamScore = function(){
+var winners = function(){
+  var winners = [];
+
+  for (var i = 0; i < gameInfo().length; i++) {
+    var homeTeam = gameInfo()[i].home_team;
+    var awayTeam = gameInfo()[i].away_team;
+
+    if (gameInfo()[i].home_score > gameInfo()[i].away_score) {
+      winners.push(homeTeam);
+    } else {
+      winners.push(awayTeam);
+    }
+  };
+  return winners;
+};
+
+var losers = function(){
+  var losers = [];
+
+  for (var i = 0; i < gameInfo().length; i++) {
+    var homeTeam = gameInfo()[i].home_team;
+    var awayTeam = gameInfo()[i].away_team;
+
+    if (gameInfo()[i].away_score < gameInfo()[i].home_score) {
+      losers.push(awayTeam);
+    } else {
+      losers.push(homeTeam);
+    }
+  };
+  return losers;
+};
+
+var numwins = function() {
 
 }
-
-
 console.log(teamNames());
+console.log(winners());
+console.log(losers());
