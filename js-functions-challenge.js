@@ -29,6 +29,9 @@ var gameInfo = function(){
 
 // YOUR CODE HERE
 
+teamObject = function(team){
+  return {team: team}
+};
 
 var teamNames = function(){
   var teams = [];
@@ -37,8 +40,8 @@ var teamNames = function(){
     var awayTeam = gameInfo()[i].away_team;
     teams.push(homeTeam)
     teams.push(awayTeam)
-    // teams.push(teamObject(homeTeam));
-    // teams.push(teamObject(awayTeam));
+    teams.push(teamObject(homeTeam));
+    teams.push(teamObject(awayTeam));
   };
   var onlyUnique = function(value, index, self) {
       return self.indexOf(value) === index;
